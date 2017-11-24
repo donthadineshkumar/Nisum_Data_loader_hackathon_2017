@@ -216,7 +216,7 @@ public class ExampleScreen_1 implements ActionListener,MouseListener,WindowListe
         pwdFld.addActionListener(this);
 
         //Connect String  Label
-        sidLabel =new JLabel("Connect String :");
+        sidLabel =new JLabel("DB/Service Name :");
         sidLabel.setFont(newFont);
         c.gridx=1;
         c.gridy=6;
@@ -420,11 +420,11 @@ public class ExampleScreen_1 implements ActionListener,MouseListener,WindowListe
         {
             if(!connectButton.getText().equals("Connect")){
                 if(connection!=null){
+                    cmbColumnNames.removeAllItems();
+                    cmbTableNames.removeAllItems();
                     connection = null;
                     connectButton.setText("Connect");
                     connectButton.setToolTipText("Click to connect to database");
-                    cmbTableNames.removeAllItems();
-                    cmbColumnNames.removeAllItems();
                     JOptionPane.showMessageDialog(frame,"DB Connection closed","Alert",JOptionPane.INFORMATION_MESSAGE);
                 }
             }else{
